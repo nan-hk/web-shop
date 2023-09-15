@@ -1,10 +1,13 @@
 <template>
-  <div>
-    <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#shoppingCart">
+  <layout-div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
       ( {{ numInCart }} )
     </button>
-    <div id="shoppingCart" class="modal fade">
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -12,9 +15,7 @@
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               Shopping cart
             </h5>
-            <button class="close" data-dismiss="modal">
-              &times;
-            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <table class="table">
@@ -40,12 +41,13 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div></layout-div>
 </template>
 <script>
+import LayoutDiv from "@/components/LayoutDiv";
 export default {
   name: 'ShoppingCart',
+  components: {LayoutDiv},
   computed: {
     inCart() {
       return this.$store.getters.inCart;

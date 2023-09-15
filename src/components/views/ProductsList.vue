@@ -43,7 +43,7 @@
                               Show
                             </router-link>
                           </p>
-                          <p class="col-md-6">
+                          <p class="col">
                             <button class="btn btn-success" @click="addToCart(product)">
                               Add to cart
                             </button>
@@ -96,10 +96,9 @@ export default {
   },
   computed: {
     filteredList() {
-      console.log(this.selected)
       if (this.selected) {
         return this.products.
-        filter(item => item.category.includes(this.selected));
+        filter(item => item.category === this.selected);
       } else if(this.search) {
         return this.products.
         filter(item => item.title.includes(this.search) || item.description.includes(this.search));

@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 import NavHeader from "@/components/views/NavHeader";
 import AppFooter from "@/components/views/AppFooter";
 export default {
